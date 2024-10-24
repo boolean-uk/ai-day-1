@@ -3,16 +3,71 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - workshop.webapp</title>
+    <title>@ViewData["Title"] - Big Mek Carsteelah's Carshop</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/workshop.webapp.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/workshop.wwwapp.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background: url('https://i.pinimg.com/originals/65/0c/cc/650ccccc5e4dd34bfdff326c43b14e60.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .navbar {
+            background-color: #ff5722; /* Bright orange navbar */
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+
+        .container {
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .animated-gif {
+            width: 100px;
+            height: auto;
+        }
+
+        footer {
+            background-color: #ff5722;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .ork {
+            position: absolute;
+            width: 100px;
+            height: auto;
+            z-index: 1000;
+            transition: transform 2s ease-in-out; /* Movement transition */
+        }
+
+        .top-left-gif {
+            position: absolute;
+            top: 60px; /* Adjust this value as needed */
+            left: 10px; /* Adjust this value as needed */
+            width: 450px; /* 3 times the original width */
+            height: auto;
+            z-index: 1001; /* Ensure it appears above other elements */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">workshop.webapp</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Big Mek Carsteelah's Carshop</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,10 +75,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-white" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-white" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
                 </div>
@@ -38,13 +93,66 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - workshop.webapp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            © 2024 - Big Mek Carsteelah's Carshop - <a asp-area="" asp-page="/Privacy" class="text-white">Privacy</a>
+            <div>
+            </div>
         </div>
     </footer>
+
+    <!-- Add the top-left GIF -->
+    <img src="https://media2.giphy.com/media/f9S2wp0VSJu0pgWnZt/giphy.gif" alt="Top Left Ork" class="top-left-gif">
+
+    <!-- Add 50 Ork images -->
+    <div id="orks-container">
+        <!-- JavaScript will generate the Ork images here -->
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const orksContainer = document.getElementById('orks-container');
+            const orkImageUrl = "https://i.pinimg.com/originals/d5/9e/1c/d59e1c81d5b76593448dd084e22984d2.gif";
+            const orkFlippedImageUrl = "https://i.imgur.com/44UDb00.gif"; // Updated path to the flipped GIF
+
+            // Create 50 Ork images
+            for (let i = 0; i < 50; i++) {
+                const ork = document.createElement('img');
+                ork.src = orkImageUrl;
+                ork.alt = "Flying Ork";
+                ork.className = "ork";
+                ork.id = `flyingOrk${i + 1}`;
+                orksContainer.appendChild(ork);
+            }
+
+            const orks = document.querySelectorAll('.ork');
+
+            function getRandomPosition(ork) {
+                const x = Math.floor(Math.random() * (window.innerWidth - ork.clientWidth));
+                const y = Math.floor(Math.random() * (window.innerHeight - ork.clientHeight));
+                return { x, y };
+            }
+
+            function moveOrk(ork) {
+                const currentX = ork.getBoundingClientRect().left;
+                const { x, y } = getRandomPosition(ork);
+                ork.style.transition = `transform ${Math.random() * 2 + 1}s ease-in-out`;
+                ork.style.transform = `translate(${x}px, ${y}px)`;
+
+                // Switch the Ork GIF based on the direction of movement
+                if (x < currentX) {
+                    ork.src = orkFlippedImageUrl;
+                } else {
+                    ork.src = orkImageUrl;
+                }
+            }
+
+            orks.forEach(ork => {
+                setInterval(() => moveOrk(ork), Math.random() * 2000 + 1000); // Move each ork every 1 to 3 seconds
+            });
+        });
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
