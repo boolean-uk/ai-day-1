@@ -23,6 +23,6 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 - [AI JS Fundeamentals Arrays](https://github.com/SimpFred/js-fundamentals-arrays/tree/ai-js-fund-arrays)
   - Generated the code by using chat
-- [AI JS Fizzbuzz]https://github.com/SimpFred/js-fizzbuzz-procedural/tree/ai-fizzbuzz
+- [AI JS Fizzbuzz](https://github.com/SimpFred/js-fizzbuzz-procedural/tree/ai-fizzbuzz)
   - Generated the code by using chat and generated test by using /tests
 -
