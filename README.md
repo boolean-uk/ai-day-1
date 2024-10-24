@@ -21,6 +21,6 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
+- [js-poker-challenge-Stian-AI](https://github.com/stian96/js-poker-challenge-Stian-AI)
 -
 -
