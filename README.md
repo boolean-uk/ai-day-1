@@ -1,3 +1,4 @@
+
 # AI for Software Development Day 1 Exercise
 
 ## Learning Objectives
@@ -24,3 +25,9 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 - https://github.com/Valen98/js-fizzbuzz-procedural-ai
 - https://github.com/Valen98/js-fundamentals-arrays-ai
 - https://github.com/Valen98/js-fundamentals-loops-ai
+
+To make Copliot answer as many tasks as possible, I asked it "Read the comments and solve the problem" And Copilot read the comments and wrote code to solve it for me
+
+
+I barely made any manual intervention of the Copliot solutions. When the Copilot got the wrong answer, I asked it again to solve it from previouse outcome
+
