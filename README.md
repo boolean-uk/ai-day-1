@@ -21,6 +21,7 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
+- [JS Poker, done by CoPilot](https://github.com/Badde00/js-poker-challenge-AI)
+- - All I did was cover the whole document and wrote ```Please fix this code to pass these tests \`\`\` Copy-pasted test document, one at a time for basic, ex1 and ex 2 \`\`\` ``` And it managed basic and ex1, but I had to redo ex2 and cover highlight only the relevant function and only the failing test to get it to work.
 -
 -
