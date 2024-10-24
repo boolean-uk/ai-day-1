@@ -2,7 +2,7 @@
 
 - https://github.com/George-Alexander-S/workshop-ai
 - https://github.com/George-Alexander-S/scrabbleconsole-ai
-- 
+
 # AI for Software Development Day 1 Exercise
 
 ## Learning Objectives
