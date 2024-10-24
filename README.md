@@ -21,6 +21,9 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
--
--
+- [AI JS Fundeamentals Arrays](https://github.com/SimpFred/js-fundamentals-arrays/tree/ai-js-fund-arrays)
+  - Generated the code by using chat
+- [AI JS Fizzbuzz](https://github.com/SimpFred/js-fizzbuzz-procedural/tree/ai-fizzbuzz)
+  - Generated the code by using chat and generated test by using /tests
+- [AI JS Fundamentals Function 2](https://github.com/SimpFred/js-fundamentals-functions-2/tree/ai-fund-funct-2)
+  - Generated code by usin Ctrl + I promt window
