@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("workshop.webapp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5d58ba7d97d6c44d7cea4036e4f3fb76796bffa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+184c6f501b6811aeb359803b40a161d45c612ab6")]
 [assembly: System.Reflection.AssemblyProductAttribute("workshop.webapp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("workshop.webapp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

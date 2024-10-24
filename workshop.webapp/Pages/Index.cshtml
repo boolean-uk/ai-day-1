@@ -36,10 +36,25 @@
     </tbody>
 </table>
 
+<!-- Edit Car Form -->
+<form id="editCarForm" style="display:none;">
+    <input type="hidden" id="editId">
+    <label for="editMake">Make:</label>
+    <input type="text" id="editMake" name="make" required>
+    <br>
+    <label for="editModel">Model:</label>
+    <input type="text" id="editModel" name="model" required>
+    <br>
+    <label for="editYear">Year:</label>
+    <input type="number" id="editYear" name="year" required>
+    <br>
+    <button type="submit">Update Car</button>
+</form>
+
 <script>
     async function fetchCars() {
         try {
-            const response = await fetch('https://localhost:7000/api/car');
+            const response = await fetch('https://localhost:7070/api/car');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -49,15 +64,15 @@
             cars.forEach(car => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                        <td>${car.id}</td>
-                        <td>${car.make}</td>
-                        <td>${car.model}</td>
-                        <td>${car.year}</td>
-                        <td>
-                            <button onclick="editCar(${car.id})">Edit</button>
-                            <button onclick="deleteCar(${car.id})">Delete</button>
-                        </td>
-                    `;
+                            <td>${car.id}</td>
+                            <td>${car.make}</td>
+                            <td>${car.model}</td>
+                            <td>${car.year}</td>
+                            <td>
+                                <button onclick="editCar(${car.id})">Edit</button>
+                                <button onclick="deleteCar(${car.id})">Delete</button>
+                            </td>
+                        `;
                 tableBody.appendChild(row);
             });
         } catch (error) {
@@ -67,7 +82,7 @@
 
     async function deleteCar(id) {
         try {
-            const response = await fetch(`https://localhost:7000/api/car/${id}`, {
+            const response = await fetch(`https://localhost:7070/api/car/${id}`, {
                 method: 'DELETE'
             });
             if (!response.ok) {
@@ -86,7 +101,7 @@
         const year = document.getElementById('year').value;
 
         try {
-            const response = await fetch('https://localhost:7000/api/car', {
+            const response = await fetch('https://localhost:7070/api/car', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -105,7 +120,7 @@
 
     async function editCar(id) {
         try {
-            const response = await fetch(`https://localhost:7000/api/car/${id}`);
+            const response = await fetch(`https://localhost:7070/api/car/${id}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -128,7 +143,7 @@
         const year = document.getElementById('editYear').value;
 
         try {
-            const response = await fetch(`https://localhost:7000/api/car/${id}`, {
+            const response = await fetch(`https://localhost:7070/api/car/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
