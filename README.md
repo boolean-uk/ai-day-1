@@ -21,6 +21,11 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
--
--
+- Project:
+  Manual code:
+
+- Project:
+  Manual code:
+
+- Project:
+  Manual code:

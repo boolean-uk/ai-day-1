@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A9689CDF-F57D-4A91-8C41-BE9EEB693F4C}|workshop.wwwapi\\workshop.wwwapi.csproj|c:\\users\\oonarh\\source\\repos\\newcopilot\\workshop.wwwapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9689CDF-F57D-4A91-8C41-BE9EEB693F4C}|workshop.wwwapi\\workshop.wwwapi.csproj|solutionrelative:workshop.wwwapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9689CDF-F57D-4A91-8C41-BE9EEB693F4C}|workshop.wwwapi\\workshop.wwwapi.csproj|c:\\users\\oonarh\\source\\repos\\newcopilot\\workshop.wwwapi\\workshop.wwwapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A9689CDF-F57D-4A91-8C41-BE9EEB693F4C}|workshop.wwwapi\\workshop.wwwapi.csproj|solutionrelative:workshop.wwwapi\\workshop.wwwapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E2B1A5-F1DE-4F5F-8F79-BBF76A4DDF6E}|workshop.wwwapp\\workshop.wwwapp.csproj|c:\\users\\oonarh\\source\\repos\\newcopilot\\workshop.wwwapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4E2B1A5-F1DE-4F5F-8F79-BBF76A4DDF6E}|workshop.wwwapp\\workshop.wwwapp.csproj|solutionrelative:workshop.wwwapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E2B1A5-F1DE-4F5F-8F79-BBF76A4DDF6E}|workshop.wwwapp\\workshop.wwwapp.csproj|c:\\users\\oonarh\\source\\repos\\newcopilot\\workshop.wwwapp\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4E2B1A5-F1DE-4F5F-8F79-BBF76A4DDF6E}|workshop.wwwapp\\workshop.wwwapp.csproj|solutionrelative:workshop.wwwapp\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E2B1A5-F1DE-4F5F-8F79-BBF76A4DDF6E}|workshop.wwwapp\\workshop.wwwapp.csproj|c:\\users\\oonarh\\source\\repos\\newcopilot\\workshop.wwwapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4E2B1A5-F1DE-4F5F-8F79-BBF76A4DDF6E}|workshop.wwwapp\\workshop.wwwapp.csproj|solutionrelative:workshop.wwwapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\workshop.wwwapi\\Program.cs",
+              "RelativeDocumentMoniker": "workshop.wwwapi\\Program.cs",
+              "ToolTip": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\workshop.wwwapi\\Program.cs",
+              "RelativeToolTip": "workshop.wwwapi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T13:26:05.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "workshop.wwwapi",
+              "DocumentMoniker": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\workshop.wwwapi\\workshop.wwwapi.csproj",
+              "RelativeDocumentMoniker": "workshop.wwwapi\\workshop.wwwapi.csproj",
+              "ToolTip": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\workshop.wwwapi\\workshop.wwwapi.csproj",
+              "RelativeToolTip": "workshop.wwwapi\\workshop.wwwapi.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-24T13:26:03.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\workshop.wwwapp\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "workshop.wwwapp\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\workshop.wwwapp\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "workshop.wwwapp\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T12:10:06.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\workshop.wwwapp\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "workshop.wwwapp\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\workshop.wwwapp\\Pages\\Index.cshtml",
+              "RelativeToolTip": "workshop.wwwapp\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAD0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-24T12:09:44.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\workshop.wwwapp\\Program.cs",
+              "RelativeDocumentMoniker": "workshop.wwwapp\\Program.cs",
+              "ToolTip": "C:\\Users\\OOnarh\\source\\repos\\newCopilot\\workshop.wwwapp\\Program.cs",
+              "RelativeToolTip": "workshop.wwwapp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T08:02:59.691Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
