@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\workshop.wwwapi.props" />
+</Project>
