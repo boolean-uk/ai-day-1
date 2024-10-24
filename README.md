@@ -21,6 +21,8 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
--
+All three js exercises are in this repo.
+
+- 
+- [Link:] (https://github.com/LudwigJL/js-fundamentals-ai-solutions)
 -
