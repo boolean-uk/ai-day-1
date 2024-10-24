@@ -23,7 +23,6 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 - https://github.com/shyye/js-fizzbuzz-procedural-ai
 - https://github.com/shyye/js-dom-greengrocers-ai
--
 
 Setup steps (personal notes):  
 1. Create a new repo, e.g. `original-name-ai`.
