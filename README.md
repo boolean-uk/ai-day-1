@@ -1,3 +1,5 @@
+https://github.com/George-Alexander-S/workshop-ai
+
 # AI for Software Development Day 1 Exercise
 
 ## Learning Objectives
@@ -21,6 +23,6 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
+- https://github.com/George-Alexander-S/workshop-ai
 -
 -
