@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "workshop.wwwapi", "workshop.wwwapi\workshop.wwwapi.csproj", "{585B151D-4C6B-45F2-833D-96E95957B52D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "workshop.wwwapp", "workshop.wwwapp\workshop.wwwapp.csproj", "{9C955143-5EFD-4BF6-85C7-302243571660}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{585B151D-4C6B-45F2-833D-96E95957B52D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{585B151D-4C6B-45F2-833D-96E95957B52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{585B151D-4C6B-45F2-833D-96E95957B52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{585B151D-4C6B-45F2-833D-96E95957B52D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C955143-5EFD-4BF6-85C7-302243571660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C955143-5EFD-4BF6-85C7-302243571660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C955143-5EFD-4BF6-85C7-302243571660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C955143-5EFD-4BF6-85C7-302243571660}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,210 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Car Information";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Car Information</h1>
+
+    <div id="car-container">
+        <p>Loading car data...</p>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const carContainer = document.getElementById('car-container');
+            const editCarForm = document.getElementById('edit-car-form');
+            const editCarId = document.getElementById('edit-car-id');
+            const editMake = document.getElementById('edit-make');
+            const editModel = document.getElementById('edit-model');
+            const editYear = document.getElementById('edit-year');
+            const editPrice = document.getElementById('edit-price');
+
+            function loadCars() {
+                fetch('https://localhost:7232/cars') // Adjust the API endpoint as necessary
+                    .then(response => response.json())
+                    .then(data => {
+                        carContainer.innerHTML = '';
+
+                        const table = document.createElement('table');
+                        table.className = 'table table-striped';
+                        table.innerHTML = `
+                            <thead>
+                                <tr>
+                                    <th>Make</th>
+                                    <th>Model</th>
+                                    <th>Year</th>
+                                    <th>Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        `;
+
+                        const tbody = table.querySelector('tbody');
+
+                        data.forEach(car => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${car.make}</td>
+                                <td>${car.model}</td>
+                                <td>${car.year}</td>
+                                <td>$${car.price}</td>
+                                <td>
+                                    <button class="btn btn-warning" onclick="editCar(${car.id}, '${car.make}', '${car.model}', ${car.year}, ${car.price})">Edit</button>
+                                    <button class="btn btn-danger" onclick="deleteCar(${car.id})">Delete</button>
+                                </td>
+                            `;
+                            tbody.appendChild(row);
+                        });
+
+                        carContainer.appendChild(table);
+                    })
+                    .catch(error => {
+                        carContainer.innerHTML = '<p>Error loading car data.</p>';
+                        console.error('Error fetching car data:', error);
+                    });
+            }
+
+            document.getElementById('new-car-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const newCar = {
+                    make: document.getElementById('make').value,
+                    model: document.getElementById('model').value,
+                    year: document.getElementById('year').value,
+                    price: document.getElementById('price').value
+                };
+
+                fetch('https://localhost:7232/cars', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newCar)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        loadCars();
+                        document.getElementById('new-car-form').reset();
+                    } else {
+                        console.error('Error adding car:', response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error adding car:', error);
+                });
+            });
+
+            window.deleteCar = function(id) {
+                fetch(`https://localhost:7232/cars/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        loadCars();
+                    } else {
+                        console.error('Error deleting car:', response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error deleting car:', error);
+                });
+            };
+
+            window.editCar = function(id, make, model, year, price) {
+                editCarId.value = id;
+                editMake.value = make;
+                editModel.value = model;
+                editYear.value = year;
+                editPrice.value = price;
+                editCarForm.style.display = 'block';
+            };
+
+            document.getElementById('edit-car-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const updatedCar = {
+                    id: editCarId.value,
+                    make: editMake.value,
+                    model: editModel.value,
+                    year: editYear.value,
+                    price: editPrice.value
+                };
+
+                fetch(`https://localhost:7232/cars/${updatedCar.id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedCar)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        loadCars();
+                        editCarForm.style.display = 'none';
+                    } else {
+                        console.error('Error updating car:', response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating car:', error);
+                });
+            });
+
+            loadCars();
+        });
+    </script>
+}
+
+<div id="add-car-form">
+    <h2>Add New Car</h2>
+    <form id="new-car-form">
+        <div class="form-group">
+            <label for="make">Make</label>
+            <input type="text" class="form-control" id="make" required>
+        </div>
+        <div class="form-group">
+            <label for="model">Model</label>
+            <input type="text" class="form-control" id="model" required>
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="number" class="form-control" id="year" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Car</button>
+    </form>
+</div>
+
+<div id="edit-car-form" style="display:none;">
+    <h2>Edit Car</h2>
+    <form id="edit-car-form">
+        <input type="hidden" id="edit-car-id">
+        <div class="form-group">
+            <label for="edit-make">Make</label>
+            <input type="text" class="form-control" id="edit-make" required>
+        </div>
+        <div class="form-group">
+            <label for="edit-model">Model</label>
+            <input type="text" class="form-control" id="edit-model" required>
+        </div>
+        <div class="form-group">
+            <label for="edit-year">Year</label>
+            <input type="number" class="form-control" id="edit-year" required>
+        </div>
+        <div class="form-group">
+            <label for="edit-price">Price</label>
+            <input type="number" class="form-control" id="edit-price" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Car</button>
+    </form>
+</div>
+
