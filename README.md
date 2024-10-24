@@ -21,6 +21,6 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
+- [GitHub](https://github.com/SimpFred/js-fundamentals-arrays/tree/ai-js-fund-arrays)
 -
 -
