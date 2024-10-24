@@ -1,5 +1,8 @@
-https://github.com/George-Alexander-S/workshop-ai
+### Links to My JavaScript Exercises Solved Using Copilot
 
+- https://github.com/George-Alexander-S/workshop-ai
+- https://github.com/George-Alexander-S/scrabbleconsole-ai
+- 
 # AI for Software Development Day 1 Exercise
 
 ## Learning Objectives
@@ -20,9 +23,3 @@ Try and solve each Exercise using Copilot as much as possible, ie keep you manua
 Do not use your previous forks for these Exercises if they exist, instead create new forks with the letters `AI` appended to the project name, so that we can filter them out later on. Do not create PRs for these Exercises.
 
 Your tutor should be able to give you a list of some of the suitable JavaScript Exercises to use, if you can't find any, if you're not sure then please ask.
-
-### Links to My JavaScript Exercises Solved Using Copilot
-
-- https://github.com/George-Alexander-S/workshop-ai
--
--
