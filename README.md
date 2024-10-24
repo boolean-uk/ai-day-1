@@ -21,6 +21,6 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
--
--
+- JavaScript fundamentals: https://github.com/maaxolofsson/js-fundamental-functions-1-copilot
+- Fizzbuzz: https://github.com/maaxolofsson/js-fizzbuzz-procedural-copilot
+- JavaScrpit fundamentals arrays: https://github.com/maaxolofsson/js-fundamentals-arrays-copilot
