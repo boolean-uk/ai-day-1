@@ -1,0 +1,210 @@
+﻿@page
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #000;
+        text-align: center;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: #fff;
+        border: 1px solid #000;
+        padding: 20px;
+    }
+    h1 {
+        color: #0000ff;
+        text-shadow: 1px 1px 2px #aaa;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+    table, th, td {
+        border: 1px solid #000;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #c0c0c0;
+    }
+    .form-group {
+        margin: 10px 0;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"], input[type="number"] {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #000;
+    }
+    button {
+        background-color: #0000ff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #000080;
+    }
+    .marquee {
+        width: 100%;
+        background-color: #ff0;
+        color: #f00;
+        font-weight: bold;
+        padding: 10px 0;
+        margin: 20px 0;
+    }
+    .animated-gif {
+        margin: 20px 0;
+    }
+    .profile-image {
+        margin: 20px 0;
+        display: none;
+    }
+    .loading-bar {
+        width: 100%;
+        background-color: #ccc;
+        margin: 20px 0;
+    }
+    .loading-bar div {
+        width: 0;
+        height: 30px;
+        background-color: #0000ff;
+    }
+</style>
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+
+    <div class="marquee">
+        <marquee>Check out our latest car models and special offers!</marquee>
+    </div>
+
+    <div class="loading-bar">
+        <div></div>
+    </div>
+
+    <div class="profile-image">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQHZnGHuJ47JbQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1724260022849?e=2147483647&v=beta&t=AbuO2bYAn2HtmlLVSgAwDLtjomAwQ1LWfN0Gn1urKPI" alt="Profile Image" />
+    </div>
+
+    <h2>Car List</h2>
+
+    <table class="table" id="carTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Car rows will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+
+    <h2>Add New Car</h2>
+    <form id="addCarForm">
+        <div class="form-group">
+            <label for="make">Make</label>
+            <input type="text" id="make" name="make" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label for="model">Model</label>
+            <input type="text" id="model" name="model" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="number" id="year" name="year" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Car</button>
+    </form>
+
+    <div class="animated-gif">
+        <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Dancing Baby" />
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const apiUrl = "https://localhost:7265/api/cars"; // Adjust the URL as needed
+
+            // Fetch and display car data
+            function fetchCars() {
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const carTableBody = document.querySelector("#carTable tbody");
+                        carTableBody.innerHTML = ""; // Clear existing rows
+                        data.forEach(car => {
+                            const row = document.createElement("tr");
+                            row.innerHTML = `
+                                <td>${car.id}</td>
+                                <td>${car.make}</td>
+                                <td>${car.model}</td>
+                                <td>${car.year}</td>
+                            `;
+                            carTableBody.appendChild(row);
+                        });
+                    })
+                    .catch(error => console.error("Error fetching car data:", error));
+            }
+
+            // Add new car
+            document.getElementById("addCarForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                const make = document.getElementById("make").value;
+                const model = document.getElementById("model").value;
+                const year = document.getElementById("year").value;
+
+                fetch(apiUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ make, model, year })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    fetchCars(); // Refresh the car list
+                    document.getElementById("addCarForm").reset(); // Clear the form
+                })
+                .catch(error => console.error("Error adding car:", error));
+            });
+
+            // Initial fetch of car data
+            fetchCars();
+
+            // Loading bar animation
+            const loadingBar = document.querySelector(".loading-bar div");
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    document.querySelector(".loading-bar").style.display = "none";
+                    document.querySelector(".profile-image").style.display = "block";
+                } else {
+                    width++;
+                    loadingBar.style.width = width + "%";
+                }
+            }, 100); // 10 seconds total (100% in 10 seconds)
+        });
+    </script>
+}
