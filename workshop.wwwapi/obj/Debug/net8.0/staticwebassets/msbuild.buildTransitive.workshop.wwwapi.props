@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\workshop.wwwapi.props" />
+</Project>
