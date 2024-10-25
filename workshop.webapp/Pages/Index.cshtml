@@ -1,0 +1,168 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Big Mek Carsteelah's Carshop";
+}
+
+<h1>Welcome to Big Mek Carsteelah's Carshop!</h1>
+
+<h2>Add New Car</h2>
+<form id="addCarForm">
+    <label for="make">Make:</label>
+    <input type="text" id="make" name="make" required>
+    <br>
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" required>
+    <br>
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year" required>
+    <br>
+    <button type="submit">Add Car</button>
+</form>
+
+<h2>Car List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="carTableBody">
+        <!-- Data will be inserted here -->
+    </tbody>
+</table>
+
+<!-- Edit Car Form -->
+<form id="editCarForm" style="display:none;">
+    <input type="hidden" id="editId">
+    <label for="editMake">Make:</label>
+    <input type="text" id="editMake" name="make" required>
+    <br>
+    <label for="editModel">Model:</label>
+    <input type="text" id="editModel" name="model" required>
+    <br>
+    <label for="editYear">Year:</label>
+    <input type="number" id="editYear" name="year" required>
+    <br>
+    <button type="submit">Update Car</button>
+</form>
+
+<script>
+    async function fetchCars() {
+        try {
+            const response = await fetch('https://localhost:7070/api/car');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const cars = await response.json();
+            const tableBody = document.getElementById('carTableBody');
+            tableBody.innerHTML = ''; // Clear existing rows
+            cars.forEach(car => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                            <td>${car.id}</td>
+                            <td>${car.make}</td>
+                            <td>${car.model}</td>
+                            <td>${car.year}</td>
+                            <td>
+                                <button onclick="editCar(${car.id})">Edit</button>
+                                <button onclick="deleteCar(${car.id})">Delete</button>
+                            </td>
+                        `;
+                tableBody.appendChild(row);
+            });
+        } catch (error) {
+            console.error('Error fetching car data:', error);
+        }
+    }
+
+    async function deleteCar(id) {
+        try {
+            const response = await fetch(`https://localhost:7070/api/car/${id}`, {
+                method: 'DELETE'
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            fetchCars(); // Refresh the table after deletion
+        } catch (error) {
+            console.error('Error deleting car:', error);
+        }
+    }
+
+    async function addCar(event) {
+        event.preventDefault();
+        const make = document.getElementById('make').value;
+        const model = document.getElementById('model').value;
+        const year = document.getElementById('year').value;
+
+        try {
+            const response = await fetch('https://localhost:7070/api/car', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ make, model, year })
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            fetchCars(); // Refresh the table after adding a new car
+            document.getElementById('addCarForm').reset(); // Clear the form
+        } catch (error) {
+            console.error('Error adding car:', error);
+        }
+    }
+
+    async function editCar(id) {
+        try {
+            const response = await fetch(`https://localhost:7070/api/car/${id}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const car = await response.json();
+            document.getElementById('editId').value = car.id;
+            document.getElementById('editMake').value = car.make;
+            document.getElementById('editModel').value = car.model;
+            document.getElementById('editYear').value = car.year;
+            document.getElementById('editCarForm').style.display = 'block';
+        } catch (error) {
+            console.error('Error fetching car data:', error);
+        }
+    }
+
+    async function updateCar(event) {
+        event.preventDefault();
+        const id = document.getElementById('editId').value;
+        const make = document.getElementById('editMake').value;
+        const model = document.getElementById('editModel').value;
+        const year = document.getElementById('editYear').value;
+
+        try {
+            const response = await fetch(`https://localhost:7070/api/car/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id, make, model, year })
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            fetchCars(); // Refresh the table after updating the car
+            document.getElementById('editCarForm').reset(); // Clear the form
+            document.getElementById('editCarForm').style.display = 'none';
+        } catch (error) {
+            console.error('Error updating car:', error);
+        }
+    }
+
+    document.getElementById('addCarForm').addEventListener('submit', addCar);
+    document.getElementById('editCarForm').addEventListener('submit', updateCar);
+
+    window.onload = fetchCars;
+</script>
