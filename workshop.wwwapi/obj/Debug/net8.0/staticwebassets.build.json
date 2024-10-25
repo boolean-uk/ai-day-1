@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8zcLnUtSqdWHbSlbtBvUowRE4hVc0S1SDjTZATcq9bk=",
+  "Source": "workshop.wwwapi",
+  "BasePath": "_content/workshop.wwwapi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
