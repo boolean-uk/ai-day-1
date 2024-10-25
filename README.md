@@ -21,6 +21,6 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
--
--
+- [ScrabbleAI](https://github.com/JHalvor/js-scrabble-challengeAI)
+- [PokerAI](https://github.com/JHalvor/js-poker-challengeAI)
+- [SoftplayAI](https://github.com/JHalvor/js-softplayAI)
