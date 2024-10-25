@@ -22,5 +22,5 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
 - https://github.com/sebgro98/js-fundamentals-functions-1/tree/new
--
+- https://github.com/sebgro98/js-fundamentals-variables/tree/ai
 -
