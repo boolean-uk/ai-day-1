@@ -21,6 +21,8 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
--
--
+- https://github.com/alihaiderkhannn/js-dom-greengrocers
+
+solved this task with github copilot.
+tried also to play with the ai, and worked a little bit on the car example from the lecture.
+
