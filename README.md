@@ -21,6 +21,11 @@ Your tutor should be able to give you a list of some of the suitable JavaScript 
 
 ### Links to My JavaScript Exercises Solved Using Copilot
 
--
--
--
+#### First branch: Used ChatGPT-4o to improve the existing functions to see how I may have written the code more efficiently
+- https://github.com/VictorsCodingCorner/js-fundamentals-functions-1/tree/AI-Branch
+
+#### Second branch: Used ChatGPT-4o to generate index.js based of instructions and the html files
+- https://github.com/VictorsCodingCorner/js-dom-greengrocers/tree/AI-Branch
+
+#### Third branch: Used ChantGPT-4o Focusing on the visual aspect of HTML and CSS to create PokemonCards
+- https://github.com/VictorsCodingCorner/js-dom-pokemon-cards/tree/AI-Branch
